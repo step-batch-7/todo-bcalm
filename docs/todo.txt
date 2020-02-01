@@ -1,0 +1,6 @@
+version 0.1=>
+
+1. Make homePage
+  1.1=> which has option to add separate toDo's on the basis of there title.
+  1.2=>Create one or more to-do list with a title.
+  1.3 => Main page has one link for see all toDo.

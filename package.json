@@ -1,0 +1,27 @@
+{
+  "name": "todo-bcalm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/step-batch-7/todo-bcalm.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/step-batch-7/todo-bcalm/issues"
+  },
+  "homepage": "https://github.com/step-batch-7/todo-bcalm#readme",
+  "devDependencies": {
+    "mocha": "^7.0.1",
+    "nyc": "^15.0.0",
+    "supertest": "^4.0.2"
+  }
+}
