@@ -7,9 +7,15 @@
   <body>
     <div id="homePage">
       <div id="header">
-        <div id="sideBar"></div>
-        <div id="crossButton" onclick="closeSideBar(this)">
-          ❌
+        <div id="sideBar">
+          <div id="sideBarHeader">
+            <div id="headerText">
+              Lists
+            </div>
+            <div id="crossButton" onclick="closeSideBar(this)">
+              ❌
+            </div>
+          </div>
         </div>
         <div id="menuBar" onclick="openSideBar(this)">
           <div class="menuBarLines"></div>
@@ -18,6 +24,7 @@
         </div>
         Welcome to TODO app
       </div>
+      <div id="container"></div>
     </div>
   </body>
 </html>
