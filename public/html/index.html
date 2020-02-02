@@ -1,29 +1,40 @@
 <html lang="en">
   <head>
     <script src="../js/main.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css"
+    />
+
     <link rel="stylesheet" href="../css/homePage.css" />
     <title>TODO</title>
   </head>
   <body>
     <div id="homePage">
       <div id="header">
-        <div id="sideBar">
-          <div id="sideBarHeader">
-            <div id="headerText">
-              Lists
-            </div>
-            <div id="crossButton" onclick="closeSideBar(this)">
-              ❌
-            </div>
-          </div>
-        </div>
+        <span> Welcome to TODO app </span>
         <div id="menuBar" onclick="openSideBar(this)">
           <div class="menuBarLines"></div>
           <div class="menuBarLines"></div>
           <div class="menuBarLines"></div>
         </div>
-        Welcome to TODO app
       </div>
+
+      <div id="sideBar">
+        <div id="sideBarHeader">
+          <div id="headerText">
+            <span>Lists</span>
+          </div>
+          <div id="crossButton" onclick="closeSideBar(this)">
+            ❌
+          </div>
+        </div>
+        <div id="newList">
+          <i class="fa fa-plus-circle" aria-hidden="true"></i>
+          <span> New List</span>
+        </div>
+      </div>
+
       <div id="container"></div>
     </div>
   </body>

@@ -1,4 +1,5 @@
 #homePage {
+  font-family: sans-serif;
   width: 93%;
 }
 
@@ -14,14 +15,13 @@
   width: 100%;
   height: 10%;
   padding: 3vw;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 3vw;
   background-image: linear-gradient(#f3ec29, rgb(121, 252, 252));
   text-align: center;
-  font-size: 3vw;
 }
 
 #menuBar {
-  margin-top: -1.9vw;
+  margin-top: -3.9vw;
   width: 2.1vw;
   height: 2vw;
   border-radius: 0.5vw;
@@ -39,13 +39,32 @@
 }
 
 #sideBarHeader {
+  background-color: #ffffa4;
   height: 3vw;
-  border: 1px solid black;
-  font-size: 2.5vw;
+  padding-top: 1vw;
+  border-bottom: 1px solid black;
 }
 
 #headerText {
-  text-align: center;
+  text-align: start;
+  margin-left: 1vw;
+}
+
+#headerText > span {
+  font-weight: 100;
+}
+
+#newList {
+  margin-top: 0.5vw;
+  padding-left: 1vw;
+  height: 3vw;
+  border-bottom: 1px solid black;
+  cursor: pointer;
+}
+
+#newList > span {
+  margin-left: 2vw;
+  font-weight: 100;
 }
 
 #sideBar {
@@ -58,6 +77,7 @@
   overflow-y: scroll;
   border: 1px solid black;
   display: none;
+  font-size: 2vw;
 }
 
 #crossButton {
