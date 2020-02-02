@@ -12,3 +12,16 @@ const closeSideBar = function(e) {
   document.getElementById('menuBar').style['display'] = 'block';
   document.getElementById('crossButton').style['display'] = 'none';
 };
+
+const showAddListOption = function(e) {
+  console.log('hello');
+  document.getElementById('addList').style['display'] = 'block';
+};
+
+const cancelList = function(e) {
+  console.log('cancel');
+};
+
+const saveList = function(e) {
+  console.log('save');
+};

@@ -41,6 +41,8 @@
 }
 
 #sideBarHeader {
+  display: flex;
+  justify-content: space-between;
   background-color: #ffffa4;
   height: 3vw;
   padding-top: 1vw;
@@ -48,7 +50,7 @@
 }
 
 #headerText {
-  text-align: start;
+  display: flex;
   margin-left: 1vw;
 }
 
@@ -83,11 +85,50 @@
 }
 
 #crossButton {
-  position: relative;
   top: -2.6vw;
   display: none;
   font-size: 1vw;
   cursor: pointer;
-  text-align: end;
+  height: 1vw;
   margin-right: 0.5vw;
+}
+
+#addList {
+  position: absolute;
+  margin-top: 10vw;
+  margin-left: 40vw;
+  height: 7vw;
+  width: 16vw;
+  border: 1px solid black;
+  background-color: white;
+  border-radius: 1vw;
+  display: none;
+}
+
+#addList > span {
+  font-size: 1.5vw;
+  margin-left: 1vw;
+}
+
+#taskName {
+  width: 13vw;
+  margin-left: 2vw;
+  margin-top: 1vw;
+  border: none;
+  outline: none;
+  font-size: 1.3vw;
+  border-bottom: 1px solid black;
+}
+
+.cancel {
+  /* margin-top: 6vw; */
+  margin-left: 8vw;
+  cursor: pointer;
+}
+
+.save {
+  cursor: pointer;
+  outline: none;
+  border: none;
+  font-size: 1.1vw;
 }
