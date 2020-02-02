@@ -20,7 +20,7 @@ const showAddListOption = function() {
 };
 
 const cancelList = function() {
-  document.getElementById('addList').style['display'] = 'block';
+  document.getElementById('addList').style['display'] = 'none';
 };
 
 const saveList = function() {

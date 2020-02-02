@@ -121,7 +121,6 @@
 }
 
 .cancel {
-  /* margin-top: 6vw; */
   margin-left: 8vw;
   cursor: pointer;
 }
@@ -132,3 +131,4 @@
   border: none;
   font-size: 1.1vw;
 }
+
