@@ -1,4 +1,4 @@
-const openSideBar = function(e) {
+const openSideBar = function() {
   const sideBar = document.getElementById('sideBar');
   sideBar.style['transition'] = 'width 0.1s';
   sideBar.style.width = '20vw';
@@ -7,27 +7,23 @@ const openSideBar = function(e) {
   document.getElementById('crossButton').style['display'] = 'block';
 };
 
-const closeSideBar = function(e) {
+const closeSideBar = function() {
   document.getElementById('sideBar').style.width = '0vw';
   document.getElementById('menuBar').style['display'] = 'block';
   document.getElementById('crossButton').style['display'] = 'none';
 };
 
-const showAddListOption = function(e) {
+const showAddListOption = function() {
   document.getElementById('addList').style['display'] = 'block';
   document.getElementById('sideBar').style.width = '0vw';
   document.getElementById('menuBar').style['display'] = 'block';
 };
 
-const cancelList = function(e) {
+const cancelList = function() {
   document.getElementById('addList').style['display'] = 'block';
 };
 
-const generateToDoList = task => {
-  return task.map(c => c.name).join('\n');
-};
-
-const saveList = function(e) {
+const saveList = function() {
   document.getElementById('addList').style['display'] = 'none';
   const userTask = document.getElementById('taskName');
   const task = {name: userTask.value};
@@ -35,10 +31,11 @@ const saveList = function(e) {
   const req = new XMLHttpRequest();
   req.onload = function() {
     if (this.status === 200) {
-      document.getElementById('todoList').innerText = generateToDoList(
-        JSON.parse(this.responseText)
-      );
+      const allTasks = JSON.parse(this.responseText)
+        .map(task => task.name)
+        .join('\n');
     }
+    document.getElementById('todoList').innerText = allTasks;
   };
   req.open('POST', 'http://localhost:8080/');
   req.setRequestHeader('content-type', 'application/json');
