@@ -36,16 +36,15 @@
       </div>
 
       <div id="container">
+        <div id="todoList"></div>
         <div id="addList">
           <span>
             List Name
           </span>
           <div id="listName">
-            <form action="/" method="POST">
               <input name="listName" id="taskName" placeholder="Let's give it a name"></input>
               <span class="cancel" onclick="cancelList(this)">cancel</span>
               <input type="submit" class="save" onclick="saveList(this)" name="submit" value="save">
-            </form>
           </div>
         </div>
       </div>
