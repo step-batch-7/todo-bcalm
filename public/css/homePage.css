@@ -111,7 +111,7 @@
   margin-left: 1vw;
 }
 
-#taskName {
+#todoName {
   width: 13vw;
   margin-left: 2vw;
   margin-top: 1vw;
@@ -130,50 +130,4 @@
 .save {
   cursor: pointer;
   font-size: 1.3vw;
-}
-
-.task {
-  display: flex;
-  flex-direction: column;
-  height: 20vw;
-  width: 15vw;
-  border: 1px solid black;
-  border-radius: 0.6vw;
-  margin: 2vw;
-}
-
-.taskName {
-  flex: 90%;
-  text-align: center;
-  margin-top: 0.1 vw;
-  font-size: 2vw;
-}
-
-.delete {
-  margin-top: 0.6vw;
-  flex: 10%;
-  cursor: pointer;
-}
-
-.taskHeader {
-  display: flex;
-  height: 4vw;
-  width: 15vw;
-  border-bottom: 1px solid black;
-}
-
-.addTask {
-  width: 13vw;
-  height: 10vh;
-  border-radius: 2vw;
-  border: 0.1vw solid black;
-  margin-top: 13vw;
-  margin-left: 1vw;
-}
-
-.addTask > input {
-  border: none;
-  outline: none;
-  margin: 0.5vw;
-  font-size: 1.1vw;
 }

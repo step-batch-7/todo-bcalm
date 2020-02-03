@@ -1,6 +1,6 @@
 const saveTodo = function() {
   document.getElementById('addList').style['display'] = 'none';
-  const userTask = document.getElementById('taskName');
+  const userTask = document.getElementById('todoName');
   const req = new XMLHttpRequest();
   req.onload = function() {
     const correctStatusCode = 200;
