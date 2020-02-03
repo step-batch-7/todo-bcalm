@@ -24,23 +24,62 @@ const cancelList = function() {
   document.getElementById('addList').style['display'] = 'none';
 };
 
-const createToDoBlock = function(todoList) {
+const deleteTodo = function() {
+  const id = JSON.parse(event.target.id);
+  const req = new XMLHttpRequest();
+  req.open('DELETE', 'http://localhost:8080/deleteTodo');
+  req.send(JSON.stringify(id));
+  req.onload = function() {
+    const correctStatusCode = 200;
+    if (this.status === correctStatusCode) {
+      createTask(JSON.parse(this.responseText));
+    }
+  };
+};
+
+const createDeleteButton = function(id) {
+  const deleteButton = document.createElement('div');
+  deleteButton.className = 'delete';
+  deleteButton.innerHTML = `<i class="fa fa-trash-o" onclick=deleteTodo()
+   id=${id} aria-hidden="true"></i>`;
+  return deleteButton;
+};
+
+const createHeader = function(task, id) {
+  const taskName = document.createElement('div');
+  taskName.innerText = task;
+  taskName.className = 'taskName';
+  const deleteButton = createDeleteButton(id);
+  const taskHeader = document.createElement('div');
+  taskHeader.className = 'taskHeader';
+  taskHeader.appendChild(taskName);
+  taskHeader.appendChild(deleteButton);
+  return taskHeader;
+};
+
+const createFooter = function() {
+  const subTaskName = document.createElement('div');
+  subTaskName.className = 'subTaskName';
+  return subTaskName;
+};
+
+const createToDoBlock = function(todo) {
+  const {title, todoId} = todo;
+  const header = createHeader(title, todoId);
+  const footer = createFooter();
+  const toDoBlock = document.createElement('div');
+  toDoBlock.className = 'task';
+  toDoBlock.appendChild(header);
+  toDoBlock.appendChild(footer);
+  container.appendChild(toDoBlock);
+};
+
+const createTask = function(todoList) {
   const container = document.getElementById('container');
   while (container.firstChild) {
     container.firstChild.remove();
   }
-  todoList.forEach(todo => {
-    const toDoBlock = document.createElement('div');
-    const taskName = document.createElement('div');
-    taskName.innerText = todo.name;
-    taskName.className = 'taskName';
-    const subTaskName = document.createElement('div');
-    subTaskName.className = 'subTaskName';
-    toDoBlock.className = 'task';
-    toDoBlock.appendChild(taskName);
-    toDoBlock.appendChild(subTaskName);
-    container.appendChild(toDoBlock);
-  });
+  todoList.forEach(createToDoBlock);
 };
 
 const homePage = function() {
@@ -48,8 +87,9 @@ const homePage = function() {
   req.open('GET', 'http://localhost:8080/getAllTodo');
   req.send();
   req.onload = function() {
-    if (this.status === 200) {
-      createToDoBlock(JSON.parse(this.responseText));
+    const correctStatusCode = 200;
+    if (this.status === correctStatusCode) {
+      createTask(JSON.parse(this.responseText));
     }
   };
 };
@@ -57,15 +97,15 @@ const homePage = function() {
 const saveList = function() {
   document.getElementById('addList').style['display'] = 'none';
   const userTask = document.getElementById('taskName');
-  const task = {name: userTask.value};
-  userTask.value = '';
   const req = new XMLHttpRequest();
   req.onload = function() {
-    if (this.status === 200) {
-      createToDoBlock(JSON.parse(this.responseText));
+    const correctStatusCode = 200;
+    if (this.status === correctStatusCode) {
+      createTask(JSON.parse(this.responseText));
     }
   };
-  req.open('POST', 'http://localhost:8080/');
+  req.open('POST', 'http://localhost:8080/addTodo');
   req.setRequestHeader('content-type', 'application/json');
-  req.send(JSON.stringify(task));
+  req.send(JSON.stringify(userTask.value));
+  userTask.value = '';
 };

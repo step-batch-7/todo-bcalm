@@ -1,0 +1,100 @@
+TODO LIST
+Office 
+Send email to boss for leave
+Plan client visit for Monday
+Assign Work to Rahul 
+
+Home 
+Get 2 Ltr Milk
+Get the fan repaired 
+Mob the floor
+
+Operation = addTodo = {
+  title: Office,
+  todoTask :[
+    {
+    todo:"OfficeSend email to boss for leave,status",
+    status:true/false
+    },
+    {
+      todo:"Plan client visit for Monday",
+      status:true/false
+    },
+    {
+      todo: "Assign Work to Rahul",
+      status: true/false
+    }
+  ]
+}
+
+Operation = deleteTodo = "todoId"
+
+Operation = deleteTodoTask = {
+  todoId:1,
+  taskId:2
+}
+
+Operation = markDone = {
+  todoId:1,
+  taskId:2
+}
+
+Operation = markNotDone = {
+  todoId:1,
+  taskId:2
+}
+
+data
+todoTask = 
+title = OfficeSend email to boss for leave,status
+           Plan client visit for Monday
+           Assign Work to Rahul 
+
+Operation = 
+
+
+
+[
+  {
+    todoId : 1,
+    title: Office,
+    todoTask:[
+      {
+        todo: "Send email to boss for leave"
+        taskId:1,
+        done:true/false
+      },
+      {
+        todo: "Plan client visit for Monday"
+        taskId:2,
+        done:true/false
+      },
+      {
+        todo: "Assign Work to Rahul "
+        taskId:3,
+        done:true/false
+      }
+    ]
+  },
+  {
+   todoId : 2,
+    title: Home,
+    todoTask:[
+      {
+        todo: "Get 2 Ltr Milk"
+        taskId:1,
+        done:true/false
+      },
+      {
+        todo: "Get the fan repaired "
+        taskId:2,
+        done:true/false
+      },
+      {
+        todo: "Mob the floor"
+        taskId:3,
+        done:true/false
+      }
+    ]
+  }
+]
