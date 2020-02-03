@@ -124,18 +124,17 @@
 .cancel {
   margin-left: 8vw;
   cursor: pointer;
+  font-size: 1.3vw;
 }
 
 .save {
   cursor: pointer;
-  outline: none;
-  border: none;
-  font-size: 1.1vw;
+  font-size: 1.3vw;
 }
 
 .task {
   display: flex;
-  justify-content: space-around;
+  flex-direction: column;
   height: 20vw;
   width: 15vw;
   border: 1px solid black;
@@ -158,8 +157,23 @@
 
 .taskHeader {
   display: flex;
-  justify-content: flex-end;
   height: 4vw;
   width: 15vw;
   border-bottom: 1px solid black;
+}
+
+.addTask {
+  width: 13vw;
+  height: 10vh;
+  border-radius: 2vw;
+  border: 0.1vw solid black;
+  margin-top: 13vw;
+  margin-left: 1vw;
+}
+
+.addTask > input {
+  border: none;
+  outline: none;
+  margin: 0.5vw;
+  font-size: 1.1vw;
 }

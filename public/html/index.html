@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="../css/homePage.css" />
     <title>TODO</title>
   </head>
-  <body onload="homePage()">
+  <body onload="addExistedTodo()">
     <div id="homePage">
       <div id="header">
         <span> Welcome to TODO app </span>
@@ -42,9 +42,9 @@
           List Name
          </span>
          <div id="listName">
-           <input name="listName" id="taskName" placeholder="Let's give it a name"></input>
+           <input name="listName" id="taskName" autofocus placeholder="Let's give it a name"></input>
            <span class="cancel" onclick="cancelList(this)">cancel</span>
-           <input type="submit" class="save" onclick="saveTodo(this)" name="submit" value="save">
+           <span class="save" onclick="saveTodo(this)">save</span>
          </div>
       </div>
 

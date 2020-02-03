@@ -18,16 +18,25 @@ const createHeader = function(task, id) {
   return taskHeader;
 };
 
-const createFooter = function() {
+const createAddTask = function(id) {
+  const addTask = document.createElement('div');
+  addTask.className = 'addTask';
+  addTask.innerHTML = `<input name="taskName" id=${id} placeholder="Let's create a task"></input>`;
+  return addTask;
+};
+
+const createFooter = function(todoId) {
   const subTaskName = document.createElement('div');
   subTaskName.className = 'subTaskName';
+  const addTask = createAddTask(todoId);
+  subTaskName.appendChild(addTask);
   return subTaskName;
 };
 
 const createToDoBlock = function(todo) {
   const {title, todoId} = todo;
   const header = createHeader(title, todoId);
-  const footer = createFooter();
+  const footer = createFooter(todoId);
   const toDoBlock = document.createElement('div');
   toDoBlock.className = 'task';
   toDoBlock.appendChild(header);
@@ -35,7 +44,7 @@ const createToDoBlock = function(todo) {
   container.appendChild(toDoBlock);
 };
 
-const createTask = function(todoList) {
+const createTodo = function(todoList) {
   const container = document.getElementById('container');
   while (container.firstChild) {
     container.firstChild.remove();

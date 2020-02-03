@@ -5,7 +5,7 @@ const saveTodo = function() {
   req.onload = function() {
     const correctStatusCode = 200;
     if (this.status === correctStatusCode) {
-      createTask(JSON.parse(this.responseText));
+      createTodo(JSON.parse(this.responseText));
     }
   };
   req.open('POST', 'http://localhost:8080/addTodo');
@@ -14,14 +14,14 @@ const saveTodo = function() {
   userTask.value = '';
 };
 
-const homePage = function() {
+const addExistedTodo = function() {
   const req = new XMLHttpRequest();
   req.open('GET', 'http://localhost:8080/getAllTodo');
   req.send();
   req.onload = function() {
     const correctStatusCode = 200;
     if (this.status === correctStatusCode) {
-      createTask(JSON.parse(this.responseText));
+      createTodo(JSON.parse(this.responseText));
     }
   };
 };
@@ -34,7 +34,7 @@ const deleteTodo = function() {
   req.onload = function() {
     const correctStatusCode = 200;
     if (this.status === correctStatusCode) {
-      createTask(JSON.parse(this.responseText));
+      createTodo(JSON.parse(this.responseText));
     }
   };
 };

@@ -79,7 +79,7 @@
   },
   "overrides": [
     {
-      "files": ["test/*.js", "public/js/main.js"],
+      "files": ["test/*.js", "public/js/*.js"],
       "rules": {
         "no-unused-vars": "off",
         "no-undef": "off"
