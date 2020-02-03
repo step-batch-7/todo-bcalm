@@ -82,8 +82,7 @@
       "files": ["test/*.js", "public/js/main.js"],
       "rules": {
         "no-unused-vars": "off",
-        "no-undef": "off",
-        "no-magic-numbers": "off"
+        "no-undef": "off"
       }
     }
   ]

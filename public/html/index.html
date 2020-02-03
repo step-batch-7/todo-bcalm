@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="../css/homePage.css" />
     <title>TODO</title>
   </head>
-  <body>
+  <body onload="homePage()">
     <div id="homePage">
       <div id="header">
         <span> Welcome to TODO app </span>
@@ -35,20 +35,18 @@
         </div>
       </div>
 
-      <div id="container">
-        <div id="todoList">
-        </div>
-        <div id="addList">
-          <span>
-            List Name
-          </span>
-          <div id="listName">
-              <input name="listName" id="taskName" placeholder="Let's give it a name"></input>
-              <span class="cancel" onclick="cancelList(this)">cancel</span>
-              <input type="submit" class="save" onclick="saveList(this)" name="submit" value="save">
-          </div>
-        </div>
+      <div id="addList">
+         <span>
+          List Name
+         </span>
+         <div id="listName">
+           <input name="listName" id="taskName" placeholder="Let's give it a name"></input>
+           <span class="cancel" onclick="cancelList(this)">cancel</span>
+           <input type="submit" class="save" onclick="saveList(this)" name="submit" value="save">
+         </div>
       </div>
+
+      <div id="container"></div>
     </div>
   </body>
 </html>

@@ -5,11 +5,12 @@
 }
 
 #container {
+  display: flex;
+  flex-wrap: wrap;
   border: 1px solid black;
   height: 40vw;
   width: 99vw;
   overflow-y: scroll;
-  background-image: linear-gradient(#ffff007a, #ffffff00);
 }
 
 #header {
@@ -132,3 +133,21 @@
   font-size: 1.1vw;
 }
 
+.task {
+  display: flex;
+  justify-content: space-around;
+  height: 20vw;
+  width: 15vw;
+  border: 1px solid black;
+  border-radius: 2vw;
+  margin: 2vw;
+}
+
+.taskName {
+  height: 4vw;
+  width: 15vw;
+  border-bottom: 1px solid black;
+  text-align: center;
+  margin-top: 0.1 vw;
+  font-size: 2vw;
+}

@@ -10,7 +10,7 @@ const openSideBar = function() {
 const closeSideBar = function() {
   document.getElementById('sideBar').style.width = '0vw';
   document.getElementById('menuBar').style['display'] = 'block';
-  document.getElementById('crossButton').style['display'] = 'none';
+  document.getElementById('crossButton').style['display'] = 'display';
 };
 
 const showAddListOption = function() {
@@ -20,7 +20,38 @@ const showAddListOption = function() {
 };
 
 const cancelList = function() {
+  document.getElementById('taskName').value = '';
   document.getElementById('addList').style['display'] = 'none';
+};
+
+const createToDoBlock = function(todoList) {
+  const container = document.getElementById('container');
+  while (container.firstChild) {
+    container.firstChild.remove();
+  }
+  todoList.forEach(todo => {
+    const toDoBlock = document.createElement('div');
+    const taskName = document.createElement('div');
+    taskName.innerText = todo.name;
+    taskName.className = 'taskName';
+    const subTaskName = document.createElement('div');
+    subTaskName.className = 'subTaskName';
+    toDoBlock.className = 'task';
+    toDoBlock.appendChild(taskName);
+    toDoBlock.appendChild(subTaskName);
+    container.appendChild(toDoBlock);
+  });
+};
+
+const homePage = function() {
+  const req = new XMLHttpRequest();
+  req.open('GET', 'http://localhost:8080/getAllTodo');
+  req.send();
+  req.onload = function() {
+    if (this.status === 200) {
+      createToDoBlock(JSON.parse(this.responseText));
+    }
+  };
 };
 
 const saveList = function() {
@@ -31,11 +62,8 @@ const saveList = function() {
   const req = new XMLHttpRequest();
   req.onload = function() {
     if (this.status === 200) {
-      const allTasks = JSON.parse(this.responseText)
-        .map(task => task.name)
-        .join('\n');
+      createToDoBlock(JSON.parse(this.responseText));
     }
-    document.getElementById('todoList').innerText = allTasks;
   };
   req.open('POST', 'http://localhost:8080/');
   req.setRequestHeader('content-type', 'application/json');
