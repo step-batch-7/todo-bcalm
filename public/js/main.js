@@ -20,6 +20,6 @@ const showAddListOption = function() {
 };
 
 const cancelList = function() {
-  document.getElementById('taskName').value = '';
+  document.getElementById('listName').value = '';
   document.getElementById('addList').style['display'] = 'none';
 };

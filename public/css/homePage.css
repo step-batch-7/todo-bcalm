@@ -24,6 +24,11 @@ body {
   text-align: center;
 }
 
+#header > span {
+  align-self: center;
+  text-align: center;
+}
+
 #container {
   display: flex;
   flex-wrap: wrap;
