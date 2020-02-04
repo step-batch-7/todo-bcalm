@@ -1,44 +1,41 @@
-const createDeleteButton = function(id) {
+const createDeleteButton = function() {
   const deleteButton = document.createElement('div');
   deleteButton.className = 'delete';
   deleteButton.innerHTML = `<i class="fa fa-trash-o" onclick=deleteTodo()
-   id=${id} aria-hidden="true"></i>`;
+    aria-hidden="true"></i>`;
   return deleteButton;
 };
 
-const createHeader = function(task, id) {
-  const taskName = document.createElement('div');
-  taskName.innerText = task;
-  taskName.className = 'taskName';
-  const deleteButton = createDeleteButton(id);
-  const taskHeader = document.createElement('div');
-  taskHeader.className = 'taskHeader';
-  taskHeader.appendChild(taskName);
-  taskHeader.appendChild(deleteButton);
-  return taskHeader;
+const createHeader = function(task) {
+  const todoName = document.createElement('div');
+  todoName.innerText = task;
+  todoName.className = 'todoName';
+  const deleteButton = createDeleteButton();
+  const todoHeader = document.createElement('div');
+  todoHeader.className = 'todoHeader';
+  todoHeader.appendChild(todoName);
+  todoHeader.appendChild(deleteButton);
+  return todoHeader;
 };
 
-const createAddTask = function(id) {
-  const addTask = document.createElement('div');
-  addTask.className = 'addTask';
-  addTask.innerHTML = `<input name="taskName" id=${id} placeholder="Let's create a task"></input>`;
-  return addTask;
-};
-
-const createFooter = function(todoId) {
-  const subTaskName = document.createElement('div');
-  subTaskName.className = 'subTaskName';
-  const addTask = createAddTask(todoId);
-  subTaskName.appendChild(addTask);
-  return subTaskName;
+const createFooter = function(id) {
+  const task = document.createElement('div');
+  task.className = 'taskName';
+  const input = document.createElement('div');
+  input.className = 'input';
+  input.innerHTML = `<input name="taskName" id=${id} onkeyup=addTask(event)
+  placeholder="Let's create a task" class="taskTitle"></input>`;
+  task.appendChild(input);
+  return task;
 };
 
 const createToDoBlock = function(todo) {
   const {title, todoId} = todo;
-  const header = createHeader(title, todoId);
+  const header = createHeader(title);
   const footer = createFooter(todoId);
   const toDoBlock = document.createElement('div');
-  toDoBlock.className = 'task';
+  toDoBlock.className = 'todo';
+  toDoBlock.id = todoId;
   toDoBlock.appendChild(header);
   toDoBlock.appendChild(footer);
   container.appendChild(toDoBlock);
@@ -50,4 +47,23 @@ const createTodo = function(todoList) {
     container.firstChild.remove();
   }
   todoList.forEach(createToDoBlock);
+};
+
+const addTaskList = function(taskList, task) {
+  const title = document.createElement('div');
+  title.id = taskList.taskId;
+  title.className = 'task';
+  title.innerHTML = `<input name="taskName" type="checkBox">${taskList.title}</input>`;
+  task.appendChild(title);
+};
+
+const createTaskName = function(taskLists, todoId) {
+  const taskNames = document.getElementById(todoId).lastChild;
+  const task = document.createElement('div');
+  task.className = 'taskList';
+  if (taskNames.childNodes.length > 1) {
+    taskNames.lastChild.remove();
+  }
+  taskLists.forEach(taskList => addTaskList(taskList, task));
+  taskNames.appendChild(task);
 };
