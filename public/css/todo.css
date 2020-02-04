@@ -2,23 +2,26 @@
   display: flex;
   flex-direction: column;
   height: 30vw;
-  width: 25vw;
+  width: 20vw;
   border: 1px solid black;
   border-radius: 0.6vw;
   margin: 2vw;
+  overflow: hidden;
 }
 
 .todoName {
   flex: 90%;
   text-align: center;
-  align-self: centertext-align: center;;
+  align-self: center;
   font-size: 2vw;
 }
 
 .todoHeader {
+  background-image: linear-gradient(#2ca731, #6bd26f);
+  color: white;
   display: flex;
   height: 4vw;
-  width: 25vw;
+  width: 20vw;
   border-bottom: 1px solid black;
 }
 
@@ -27,53 +30,4 @@
   flex: 10%;
   cursor: pointer;
   font-size: 2vw;
-}
-
-.taskName {
-  display: flex;
-  flex-direction: column-reverse;
-  width: 25vw;
-  height: 26vw;
-  overflow-y: scroll;
-}
-
-.input {
-  height: 20%;
-  border-radius: 2vw;
-  border: 0.1vw solid black;
-}
-
-.input > input {
-  border: none;
-  outline: none;
-  margin-top: 1vw;
-  margin-left: 2vw;
-  font-size: 1.8vw;
-}
-
-.task {
-  display: flex;
-  justify-content: space-between;
-  height: 3vw;
-  font-size: 2vw;
-  margin-top: 0.8vw;
-}
-
-.taskTitle {
-  display: flex;
-}
-
-.taskTitle > input {
-  font-size: 2vw;
-}
-
-.taskList {
-  height: 90%;
-  overflow-y: scroll;
-}
-
-.deleteTask {
-  display: flex;
-  margin-right: 1vw;
-  cursor: pointer;
 }

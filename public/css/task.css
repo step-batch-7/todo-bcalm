@@ -1,0 +1,56 @@
+.taskName {
+  display: flex;
+  flex-direction: column-reverse;
+  width: 20vw;
+  height: 26vw;
+  overflow-y: scroll;
+}
+
+.input {
+  height: 11%;
+  border-radius: 2vw;
+  border: 0.1vw solid black;
+  margin: 1vw;
+}
+
+.input > input {
+  border: none;
+  outline: none;
+  margin-top: 0.12vw;
+  margin-left: 1vw;
+  font-size: 1.5vw;
+  font-weight: 150;
+}
+
+p {
+  font-size: 1.8vw;
+  margin-top: 0;
+  font-weight: 100;
+}
+
+.task {
+  display: flex;
+  justify-content: space-between;
+  height: 3vw;
+  font-size: 2vw;
+  margin-top: 0.8vw;
+}
+
+.taskTitle {
+  display: flex;
+}
+
+.taskTitle > input {
+  font-size: 2vw;
+}
+
+.taskList {
+  height: 90%;
+  overflow-y: scroll;
+}
+
+.deleteTask {
+  display: flex;
+  margin-right: 1vw;
+  cursor: pointer;
+}

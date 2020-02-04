@@ -18,9 +18,10 @@ body {
   border: 1px solid black;
   width: 100%;
   height: 10%;
-  padding: 3vw;
+  padding-top: 3.2vw;
   font-size: 3vw;
-  background-image: linear-gradient(#f3ec29, rgb(121, 252, 252));
+  color: white;
+  background-image: linear-gradient(#2ca731, #6bd26f);
   text-align: center;
 }
 
@@ -39,7 +40,7 @@ body {
 }
 
 #menuBar {
-  margin-top: -3.9vw;
+  margin-top: -5.9vw;
   width: 2.1vw;
   height: 2vw;
   border-radius: 0.5vw;
@@ -72,7 +73,7 @@ body {
 #sideBarHeader {
   display: flex;
   justify-content: space-between;
-  background-color: #ffffa4;
+  background-image: linear-gradient(#2ca731, #6bd26f);
   height: 3vw;
   padding-top: 1vw;
   border-bottom: 1px solid black;
