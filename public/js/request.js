@@ -7,7 +7,7 @@ const sendHttpRequest = function(reqMethod, reqUrl, sendData, action, id) {
   const req = new XMLHttpRequest();
   req.onload = function() {
     const correctStatusCode = 200;
-    if (this.status === correctStatusCode && callback) {
+    if (this.status === correctStatusCode) {
       callback(JSON.parse(this.responseText), id);
     }
   };
@@ -53,11 +53,18 @@ const addExistedTodo = function() {
 const deleteTodo = function() {
   const sendData = event.target.parentNode.parentNode.parentNode.id;
   const reqUrl = 'http://localhost:8080/deleteTodo';
-  sendHttpRequest('POST', reqUrl, sendData, 'addTodo');
+  sendHttpRequest('DELETE', reqUrl, sendData, 'addTodo');
+};
+
+const deleteTask = function() {
+  const taskId = event.target.parentNode.parentNode.id;
+  const [id] = taskId.split('_');
+  const reqUrl = 'http://localhost:8080/deleteTask';
+  sendHttpRequest('DELETE', reqUrl, taskId, 'addTask', id);
 };
 
 const toggleStatus = function(event) {
-  const taskId = event.target.parentNode.id;
+  const taskId = event.target.parentNode.parentNode.id;
   const reqUrl = 'http://localhost:8080/toggleStatus';
   const [id] = taskId.split('_');
   sendHttpRequest('POST', reqUrl, taskId, 'addTask', id);

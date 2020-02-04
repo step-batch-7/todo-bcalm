@@ -51,15 +51,26 @@
 
 .task {
   display: flex;
+  justify-content: space-between;
   height: 2vw;
-  font-size: 1.1vw;
-}
-
-.task > input {
   font-size: 1.1vw;
 }
 
 .taskList {
   height: 90%;
   overflow-y: scroll;
+}
+
+.taskTitle > input {
+  font-size: 1.1vw;
+}
+
+.taskTitle {
+  display: flex;
+}
+
+.deleteTask {
+  display: flex;
+  margin-right: 1vw;
+  cursor: pointer;
 }
