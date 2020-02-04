@@ -1,17 +1,11 @@
 .todo {
   display: flex;
   flex-direction: column;
-  height: 20vw;
-  width: 15vw;
+  height: 30vw;
+  width: 25vw;
   border: 1px solid black;
   border-radius: 0.6vw;
   margin: 2vw;
-}
-
-.delete {
-  margin-top: 0.6vw;
-  flex: 10%;
-  cursor: pointer;
 }
 
 .todoName {
@@ -24,15 +18,22 @@
 .todoHeader {
   display: flex;
   height: 4vw;
-  width: 15vw;
+  width: 25vw;
   border-bottom: 1px solid black;
+}
+
+.delete {
+  margin-top: 0.6vw;
+  flex: 10%;
+  cursor: pointer;
+  font-size: 2vw;
 }
 
 .taskName {
   display: flex;
   flex-direction: column-reverse;
-  width: 15vw;
-  height: 16vw;
+  width: 25vw;
+  height: 26vw;
   overflow-y: scroll;
 }
 
@@ -45,28 +46,30 @@
 .input > input {
   border: none;
   outline: none;
-  margin: 0.7vw;
-  font-size: 1.1vw;
+  margin-top: 1vw;
+  margin-left: 2vw;
+  font-size: 1.8vw;
 }
 
 .task {
   display: flex;
   justify-content: space-between;
-  height: 2vw;
-  font-size: 1.1vw;
+  height: 3vw;
+  font-size: 2vw;
+  margin-top: 0.8vw;
+}
+
+.taskTitle {
+  display: flex;
+}
+
+.taskTitle > input {
+  font-size: 2vw;
 }
 
 .taskList {
   height: 90%;
   overflow-y: scroll;
-}
-
-.taskTitle > input {
-  font-size: 1.1vw;
-}
-
-.taskTitle {
-  display: flex;
 }
 
 .deleteTask {
