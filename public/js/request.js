@@ -1,9 +1,14 @@
-const sendHttpRequest = function(reqMethod, reqUrl, sendData, callback) {
+const sendHttpRequest = function(reqMethod, reqUrl, sendData, action, id) {
+  const actions = {
+    addTask: createTaskName,
+    addTodo: createTodo
+  };
+  const callback = actions[action];
   const req = new XMLHttpRequest();
   req.onload = function() {
     const correctStatusCode = 200;
-    if (this.status === correctStatusCode) {
-      callback(JSON.parse(this.responseText));
+    if (this.status === correctStatusCode && callback) {
+      callback(JSON.parse(this.responseText), id);
     }
   };
   req.open(reqMethod, reqUrl);
@@ -16,25 +21,17 @@ const saveTodo = function() {
   const todo = document.getElementById('todoName');
   const reqUrl = 'http://localhost:8080/addTodo';
   const sendData = JSON.stringify(todo.value);
-  sendHttpRequest('POST', reqUrl, sendData, createTodo);
+  sendHttpRequest('POST', reqUrl, sendData, 'addTodo');
   todo.value = '';
 };
 
 const addTask = function(e) {
   if (e.key === 'Enter') {
     const id = event.target.id;
-    const data = {title: event.target.value, id};
+    const data = JSON.stringify({title: event.target.value, id});
     event.target.value = '';
-    const req = new XMLHttpRequest();
-    req.onload = function() {
-      const correctStatusCode = 200;
-      if (this.status === correctStatusCode) {
-        createTaskName(JSON.parse(this.responseText), id);
-      }
-    };
-    req.open('POST', 'http://localhost:8080/addTask');
-    req.setRequestHeader('content-type', 'application/json');
-    req.send(JSON.stringify(data));
+    const reqUrl = 'http://localhost:8080/addTask';
+    sendHttpRequest('POST', reqUrl, data, 'addTask', id);
   }
 };
 
@@ -56,5 +53,12 @@ const addExistedTodo = function() {
 const deleteTodo = function() {
   const sendData = event.target.parentNode.parentNode.parentNode.id;
   const reqUrl = 'http://localhost:8080/deleteTodo';
-  sendHttpRequest('POST', reqUrl, sendData, createTodo);
+  sendHttpRequest('POST', reqUrl, sendData, 'addTodo');
+};
+
+const toggleStatus = function(event) {
+  const taskId = event.target.parentNode.id;
+  const reqUrl = 'http://localhost:8080/toggleStatus';
+  const [id] = taskId.split('_');
+  sendHttpRequest('POST', reqUrl, taskId, 'addTask', id);
 };

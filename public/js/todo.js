@@ -49,11 +49,13 @@ const createTodo = function(todoList) {
   todoList.forEach(createToDoBlock);
 };
 
-const addTaskList = function(taskList, task) {
+const addTaskList = function(taskList, task, todoId) {
+  const status = taskList.done ? 'checked' : 'unchecked';
   const title = document.createElement('div');
-  title.id = taskList.taskId;
+  title.id = `${todoId}_${taskList.taskId}`;
   title.className = 'task';
-  title.innerHTML = `<input name="taskName" type="checkBox">${taskList.title}</input>`;
+  title.innerHTML = `<input name="taskName"
+  onclick="toggleStatus(event)" ${status} type="checkBox">${taskList.title}`;
   task.appendChild(title);
 };
 
@@ -64,6 +66,6 @@ const createTaskName = function(taskLists, todoId) {
   if (taskNames.childNodes.length > 1) {
     taskNames.lastChild.remove();
   }
-  taskLists.forEach(taskList => addTaskList(taskList, task));
+  taskLists.forEach(taskList => addTaskList(taskList, task, todoId));
   taskNames.appendChild(task);
 };

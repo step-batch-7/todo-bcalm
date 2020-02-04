@@ -52,6 +52,11 @@
 .task {
   display: flex;
   height: 2vw;
+  font-size: 1.1vw;
+}
+
+.task > input {
+  font-size: 1.1vw;
 }
 
 .taskList {
