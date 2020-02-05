@@ -17,7 +17,7 @@ const addExistedTodo = function() {
     const correctStatusCode = 200;
     if (this.status === correctStatusCode) {
       createTodo(response);
-      // response.forEach(todo => createTaskName(todo.taskName, todo.todId));
+      response.forEach(todo => createTaskName(todo.taskName, todo.todoId));
     }
   });
 };
@@ -60,15 +60,17 @@ const addTask = function() {
 };
 
 const deleteTask = function() {
-  //   const taskId = event.target.parentNode.parentNode.id;
-  //   const [id] = taskId.split('_');
-  //   const req = {method: 'DELETE', url: '/deleteTask'};
-  //   sendHttpRequest(req, taskId, createTaskName, id);
+  const taskId = event.target.parentNode.parentNode.id;
+  const [id] = taskId.split('_');
+  const req = {method: 'DELETE', url: '/deleteTask', body: taskId};
+  sendHttpRequest(req, function() {
+    deleteTaskName(taskId);
+  });
 };
 
 const toggleStatus = function(event) {
-  //   const taskId = event.target.parentNode.parentNode.id;
-  //   const [id] = taskId.split('_');
-  //   const req = {method: 'POST', url: '/toggleStatus'};
-  //   sendHttpRequest(req, sendData, createTaskName, id);
+  const taskId = event.target.parentNode.parentNode.id;
+  const [id] = taskId.split('_');
+  const req = {method: 'POST', url: '/toggleStatus', body: taskId};
+  sendHttpRequest(req, () => {});
 };

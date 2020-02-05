@@ -28,3 +28,7 @@ const createTaskName = function(taskLists, todoId) {
   taskLists.forEach(taskList => addTaskList(taskList, task, todoId));
   taskNames.appendChild(task);
 };
+
+const deleteTaskName = function(taskId) {
+  document.getElementById(taskId).remove();
+};

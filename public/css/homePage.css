@@ -17,12 +17,13 @@ body {
 #header {
   border: 1px solid black;
   width: 100%;
-  height: 10%;
-  padding-top: 3.2vw;
-  font-size: 3vw;
+  height: 8vh;
+  padding: 5vh;
   color: white;
   background-image: linear-gradient(#2ca731, #6bd26f);
   text-align: center;
+  font-size: 3vw;
+  align-self: center;
 }
 
 #header > span {
@@ -40,7 +41,7 @@ body {
 }
 
 #menuBar {
-  margin-top: -5.9vw;
+  margin-top: -10vh;
   width: 2.1vw;
   height: 2vw;
   border-radius: 0.5vw;
@@ -119,7 +120,6 @@ body {
   border: 1px solid black;
   background-color: white;
   border-radius: 1vw;
-  /* transform: scale(0); */
   display: none;
 }
 
