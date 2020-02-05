@@ -17,7 +17,7 @@ const addExistedTodo = function() {
     const correctStatusCode = 200;
     if (this.status === correctStatusCode) {
       createTodo(response);
-      response.forEach(todo => createTaskName(todo.taskName, todo.todId));
+      // response.forEach(todo => createTaskName(todo.taskName, todo.todId));
     }
   });
 };
@@ -36,6 +36,17 @@ const saveTodo = function() {
   });
 };
 
+const deleteTodo = function() {
+  const req = {
+    method: 'DELETE',
+    url: '/deleteTodo',
+    body: event.target.parentNode.parentNode.parentNode.id
+  };
+  sendHttpRequest(req, function() {
+    deleteTodoItem(req.body);
+  });
+};
+
 const addTask = function() {
   //   const {id, value} = event.target;
   //   if (event.key === 'Enter' && value.trim()) {
@@ -44,12 +55,6 @@ const addTask = function() {
   //     const req = {method: 'POST', url: '/addTask'};
   //     sendHttpRequest(req, data, createTaskName, id);
   //   }
-};
-
-const deleteTodo = function() {
-  //   const sendData = event.target.parentNode.parentNode.parentNode.id;
-  //   const req = {method: 'DELETE', url: '/deleteTodo'};
-  //   sendHttpRequest(req, sendData, createTodo);
 };
 
 const deleteTask = function() {

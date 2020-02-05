@@ -48,3 +48,7 @@ const createTodo = function(todoList) {
   }
   todoList.forEach(createToDoBlock);
 };
+
+const deleteTodoItem = function(todoId) {
+  document.getElementById(todoId).remove();
+};
