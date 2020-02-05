@@ -22,7 +22,7 @@ const addExistedTodo = function() {
   });
 };
 
-const saveTodo = function() {
+const addTodo = function() {
   document.getElementById('addList').style['display'] = 'none';
   const todo = document.getElementById('todoName');
   const req = {
