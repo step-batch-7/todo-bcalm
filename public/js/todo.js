@@ -48,4 +48,3 @@ const createTodo = function(todoList) {
   }
   todoList.forEach(createToDoBlock);
 };
-
