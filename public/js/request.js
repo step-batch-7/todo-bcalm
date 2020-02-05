@@ -48,13 +48,15 @@ const deleteTodo = function() {
 };
 
 const addTask = function() {
-  //   const {id, value} = event.target;
-  //   if (event.key === 'Enter' && value.trim()) {
-  //     const data = {title: value, id};
-  //     event.target.value = '';
-  //     const req = {method: 'POST', url: '/addTask'};
-  //     sendHttpRequest(req, data, createTaskName, id);
-  //   }
+  const {id, value} = event.target;
+  if (event.key === 'Enter' && value.trim()) {
+    const data = {title: value, id};
+    event.target.value = '';
+    const req = {method: 'POST', url: '/addTask', body: data};
+    sendHttpRequest(req, function() {
+      createTaskName(JSON.parse(this.responseText), id);
+    });
+  }
 };
 
 const deleteTask = function() {
