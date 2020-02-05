@@ -22,41 +22,46 @@ const addExistedTodo = function() {
   });
 };
 
-// const saveTodo = function() {
-//   document.getElementById('addList').style['display'] = 'none';
-//   const todo = document.getElementById('todoName');
-//   const sendData = todo.value;
-//   const req = {method: 'POST', url: '/addTodo'};
-//   sendHttpRequest(req, sendData, createToDoBlock);
-//   todo.value = '';
-// };
+const saveTodo = function() {
+  document.getElementById('addList').style['display'] = 'none';
+  const todo = document.getElementById('todoName');
+  const req = {
+    method: 'POST',
+    url: '/addTodo',
+    body: todo.value
+  };
+  todo.value = '';
+  sendHttpRequest(req, function() {
+    createToDoBlock(JSON.parse(this.responseText));
+  });
+};
 
-// const addTask = function() {
-//   const {id, value} = event.target;
-//   if (event.key === 'Enter' && value.trim()) {
-//     const data = {title: value, id};
-//     event.target.value = '';
-//     const req = {method: 'POST', url: '/addTask'};
-//     sendHttpRequest(req, data, createTaskName, id);
-//   }
-// };
+const addTask = function() {
+  //   const {id, value} = event.target;
+  //   if (event.key === 'Enter' && value.trim()) {
+  //     const data = {title: value, id};
+  //     event.target.value = '';
+  //     const req = {method: 'POST', url: '/addTask'};
+  //     sendHttpRequest(req, data, createTaskName, id);
+  //   }
+};
 
-// const deleteTodo = function() {
-//   const sendData = event.target.parentNode.parentNode.parentNode.id;
-//   const req = {method: 'DELETE', url: '/deleteTodo'};
-//   sendHttpRequest(req, sendData, createTodo);
-// };
+const deleteTodo = function() {
+  //   const sendData = event.target.parentNode.parentNode.parentNode.id;
+  //   const req = {method: 'DELETE', url: '/deleteTodo'};
+  //   sendHttpRequest(req, sendData, createTodo);
+};
 
-// const deleteTask = function() {
-//   const taskId = event.target.parentNode.parentNode.id;
-//   const [id] = taskId.split('_');
-//   const req = {method: 'DELETE', url: '/deleteTask'};
-//   sendHttpRequest(req, taskId, createTaskName, id);
-// };
+const deleteTask = function() {
+  //   const taskId = event.target.parentNode.parentNode.id;
+  //   const [id] = taskId.split('_');
+  //   const req = {method: 'DELETE', url: '/deleteTask'};
+  //   sendHttpRequest(req, taskId, createTaskName, id);
+};
 
-// const toggleStatus = function(event) {
-//   const taskId = event.target.parentNode.parentNode.id;
-//   const [id] = taskId.split('_');
-//   const req = {method: 'POST', url: '/toggleStatus'};
-//   sendHttpRequest(req, sendData, createTaskName, id);
-// };
+const toggleStatus = function(event) {
+  //   const taskId = event.target.parentNode.parentNode.id;
+  //   const [id] = taskId.split('_');
+  //   const req = {method: 'POST', url: '/toggleStatus'};
+  //   sendHttpRequest(req, sendData, createTaskName, id);
+};
