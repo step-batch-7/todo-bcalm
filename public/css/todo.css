@@ -10,19 +10,33 @@
 }
 
 .todoName {
-  flex: 90%;
+  flex: 70%;
   text-align: center;
   align-self: center;
   font-size: 2vw;
-  margin: 1vw;
-  overflow: scroll;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow-x: scroll;
+  margin-top: 1vw;
+}
+
+.todoName:hover {
+  text-overflow: clip;
 }
 
 .todoHeader {
   background-image: linear-gradient(#2ca731, #6bd26f);
   color: white;
   display: flex;
+  height: 4vw;
   width: 20vw;
+  overflow: hidden;
+}
+
+::-webkit-scrollbar {
+  background: transparent;
 }
 
 .delete {
@@ -30,4 +44,15 @@
   flex: 15%;
   cursor: pointer;
   font-size: 2vw;
+}
+
+.editTodo {
+  margin-top: 1vw;
+  flex: 15%;
+  cursor: pointer;
+}
+
+.editTodo > img {
+  width: 2vw;
+  height: 2vw;
 }

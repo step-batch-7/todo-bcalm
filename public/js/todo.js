@@ -1,3 +1,10 @@
+const createEditButton = function(className, callback) {
+  const editButton = document.createElement('div');
+  editButton.className = className;
+  editButton.innerHTML = `<img src="/images/pencil.svg" onclick="(${callback})(event)"></img>`;
+  return editButton;
+};
+
 const createDeleteButton = function(className, callback) {
   const deleteButton = document.createElement('div');
   deleteButton.className = className;
@@ -6,14 +13,21 @@ const createDeleteButton = function(className, callback) {
   return deleteButton;
 };
 
-const createHeader = function(task) {
+const createTodoName = function(task) {
   const todoName = document.createElement('div');
   todoName.innerText = task;
   todoName.className = 'todoName';
+  return todoName;
+};
+
+const createHeader = function(task) {
+  const todoName = createTodoName(task);
+  const editButton = createEditButton('editTodo', editTodo);
   const deleteButton = createDeleteButton('delete', deleteTodo);
   const todoHeader = document.createElement('div');
   todoHeader.className = 'todoHeader';
   todoHeader.appendChild(todoName);
+  todoHeader.appendChild(editButton);
   todoHeader.appendChild(deleteButton);
   return todoHeader;
 };

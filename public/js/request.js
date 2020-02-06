@@ -74,3 +74,7 @@ const toggleStatus = function(event) {
   const req = {method: 'POST', url: '/toggleStatus', body: taskId};
   sendHttpRequest(req, () => {});
 };
+
+const editTodo = function(event) {
+  console.log(event);
+};
