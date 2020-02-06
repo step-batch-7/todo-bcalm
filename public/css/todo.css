@@ -14,13 +14,14 @@
   text-align: center;
   align-self: center;
   font-size: 2vw;
+  margin: 1vw;
+  overflow: scroll;
 }
 
 .todoHeader {
   background-image: linear-gradient(#2ca731, #6bd26f);
   color: white;
   display: flex;
-  height: 4vw;
   width: 20vw;
 }
 

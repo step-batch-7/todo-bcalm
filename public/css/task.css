@@ -34,9 +34,6 @@ p {
   height: 3vw;
   font-size: 2vw;
 }
-.task:hover {
-  box-shadow: 1px 1px 1px 1px grey;
-}
 
 .taskTitle {
   display: flex;
