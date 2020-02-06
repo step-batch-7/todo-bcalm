@@ -8,98 +8,37 @@ body {
   left: 0;
   margin: 0;
   padding: 0;
-  width: 100%;
   height: 100%;
-  position: fixed;
+  width: 100%;
   border: 0.1vw solid black;
 }
 
 #header {
-  border: 1px solid black;
   width: 100%;
-  height: 8vh;
-  padding: 5vh;
+  height: 3vw;
+  padding-top: 3vh;
   color: white;
   background-image: linear-gradient(#2ca731, #6bd26f);
   text-align: center;
-  font-size: 3vw;
+  font-size: 2vw;
   align-self: center;
-}
-
-#header > span {
-  align-self: center;
-  text-align: center;
 }
 
 #container {
   display: flex;
   flex-wrap: wrap;
-  border: 0.1vw solid black;
-  height: 90%;
   width: 100vw;
+  height: 90%;
   overflow-y: scroll;
-}
-
-#menuBar {
-  margin-top: -10vh;
-  width: 2.1vw;
-  height: 2vw;
-  border-radius: 0.5vw;
-  border: 1px solid black;
-  position: absolute;
-  left: 2%;
-}
-
-.menuBarLines {
-  margin-top: 0.35vw;
-  margin-left: 0.3vw;
-  width: 1.5vw;
-  background-color: white;
-  height: 0.2vw;
-}
-
-#sideBar {
-  width: 0vw;
-  background-color: white;
-  position: absolute;
-  top: 0vw;
-  left: 0vw;
-  bottom: 0;
-  overflow-y: scroll;
-  border: 0.1vw solid black;
-  display: none;
-  font-size: 2vw;
-}
-
-#sideBarHeader {
-  display: flex;
-  justify-content: space-between;
-  background-image: linear-gradient(#2ca731, #6bd26f);
-  height: 3vw;
-  padding-top: 1vw;
-  border-bottom: 1px solid black;
-}
-
-#headerText {
-  display: flex;
-  margin-left: 1vw;
-}
-
-#headerText > span {
-  font-weight: 100;
 }
 
 #newList {
-  margin-top: 0.5vw;
-  padding-left: 1vw;
-  height: 3vw;
-  border-bottom: 1px solid black;
-  cursor: pointer;
-}
-
-#newList > span {
-  margin-left: 2vw;
-  font-weight: 100;
+  margin-top: -2.6vw;
+  width: 2.1vw;
+  height: 2vw;
+  border-radius: 0.5vw;
+  position: fixed;
+  right: 1%;
 }
 
 #crossButton {
@@ -111,7 +50,7 @@ body {
   margin-right: 0.5vw;
 }
 
-#addList {
+.addList {
   position: absolute;
   margin-top: 10vw;
   margin-left: 40vw;
@@ -120,7 +59,8 @@ body {
   border: 1px solid black;
   background-color: white;
   border-radius: 1vw;
-  display: none;
+  transition: ease-in 200ms;
+  transform: scale(0);
 }
 
 #addList > span {

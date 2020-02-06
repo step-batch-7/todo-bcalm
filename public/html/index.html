@@ -18,30 +18,15 @@
   <body onload="addExistedTodo()">
     <div id="homePage">
       <div id="header">
-        <span> Welcome to TODO app </span>
-        <div id="menuBar" onclick="openSideBar(this)">
-          <div class="menuBarLines"></div>
-          <div class="menuBarLines"></div>
-          <div class="menuBarLines"></div>
-        </div>
-      </div>
-
-      <div id="sideBar">
-        <div id="sideBarHeader">
-          <div id="headerText">
-            <span>Lists</span>
-          </div>
-          <div id="crossButton" onclick="closeSideBar(this)">
-            <i class="fa fa-times" aria-hidden="true"></i>
-          </div>
+        <div id="headerText">
+          <span> TODO </span>
         </div>
         <div id="newList" onclick="showAddListOption(this)">
-          <i class="fa fa-plus-circle" aria-hidden="true"></i>
-          <span> New List</span>
+           <i class="fa fa-plus-circle" aria-hidden="true"></i>
         </div>
       </div>
 
-      <div id="addList">
+      <div id="addList" class="addList">
          <span>
           List Name
          </span>

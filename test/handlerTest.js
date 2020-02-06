@@ -14,8 +14,7 @@ describe('GET', () => {
       .get('/')
       .set('content-type', 'application/json')
       .expect('Content-type', 'text/html')
-      .expect('Content-length', '1845')
-      .expect(/Welcome to TODO app/)
+      .expect(/TODO/)
       .expect(200, done);
   });
 });

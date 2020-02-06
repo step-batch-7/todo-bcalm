@@ -24,8 +24,8 @@
 
 p {
   font-size: 1.8vw;
-  margin-top: 0;
   font-weight: 100;
+  margin: 0vw;
 }
 
 .task {
@@ -33,7 +33,9 @@ p {
   justify-content: space-between;
   height: 3vw;
   font-size: 2vw;
-  margin-top: 0.8vw;
+}
+.task:hover {
+  box-shadow: 1px 1px 1px 1px grey;
 }
 
 .taskTitle {
@@ -41,12 +43,13 @@ p {
 }
 
 .taskTitle > input {
-  font-size: 2vw;
+  font-size: 1.5vw;
   margin-top: 0.5vw;
 }
 
 .taskList {
   height: 90%;
+  margin-top: 1vw;
   overflow-y: scroll;
 }
 

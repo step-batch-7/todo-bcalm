@@ -23,7 +23,7 @@ const addExistedTodo = function() {
 };
 
 const addTodo = function() {
-  document.getElementById('addList').style['display'] = 'none';
+  document.getElementById('addList').style['transform'] = 'scale(0)';
   const todo = document.getElementById('todoName');
   const req = {
     method: 'POST',
