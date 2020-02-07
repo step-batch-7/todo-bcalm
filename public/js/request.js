@@ -80,3 +80,13 @@ const editTodo = function(todo, todoId) {
   const req = {method: 'POST', url: '/editTodo', body: data};
   sendHttpRequest(req, () => {});
 };
+
+const editTask = function(task, taskId) {
+  task.firstChild.style.display = 'block';
+  task.lastChild.remove();
+  const value = task.previousSibling.lastChild.innerText;
+  task.previousSibling.lastChild.contentEditable = 'false';
+  const data = {title: value, id: taskId};
+  const req = {method: 'POST', url: '/editTask', body: data};
+  sendHttpRequest(req, () => {});
+};
