@@ -36,45 +36,47 @@ const addTodo = function() {
   });
 };
 
-const deleteTodo = function() {
+const deleteTodo = function(taskId) {
   const req = {
     method: 'DELETE',
     url: '/deleteTodo',
-    body: event.target.parentNode.parentNode.parentNode.id
+    body: taskId
   };
   sendHttpRequest(req, function() {
     deleteTodoItem(req.body);
   });
 };
 
-const addTask = function() {
-  const {id, value} = event.target;
+const addTask = function(todoId) {
+  const {value} = event.target;
   if (event.key === 'Enter' && value.trim()) {
-    const data = {title: value, id};
+    const data = {title: value, id: todoId};
     event.target.value = '';
     const req = {method: 'POST', url: '/addTask', body: data};
     sendHttpRequest(req, function() {
-      createTaskName(JSON.parse(this.responseText), id);
+      createTaskName(JSON.parse(this.responseText), todoId);
     });
   }
 };
 
-const deleteTask = function() {
-  const taskId = event.target.parentNode.parentNode.id;
-  const [id] = taskId.split('_');
+const deleteTask = function(taskId) {
   const req = {method: 'DELETE', url: '/deleteTask', body: taskId};
   sendHttpRequest(req, function() {
     deleteTaskName(taskId);
   });
 };
 
-const toggleStatus = function(event) {
-  const taskId = event.target.parentNode.parentNode.id;
-  const [id] = taskId.split('_');
+const toggleStatus = function(taskId) {
   const req = {method: 'POST', url: '/toggleStatus', body: taskId};
   sendHttpRequest(req, () => {});
 };
 
-const editTodo = function(event) {
-  console.log(event);
+const editTodo = function(todo, todoId) {
+  todo.firstChild.style.display = 'block';
+  todo.lastChild.remove();
+  const value = todo.previousSibling.firstChild.innerText;
+  todo.previousSibling.firstChild.contentEditable = 'false';
+  const data = {title: value, id: todoId};
+  const req = {method: 'POST', url: '/editTodo', body: data};
+  sendHttpRequest(req, () => {});
 };
