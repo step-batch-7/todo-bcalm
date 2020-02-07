@@ -1,13 +1,13 @@
 .taskName {
   display: flex;
   flex-direction: column-reverse;
-  width: 21.6vw;
+  width: 20vw;
   height: 26vw;
   overflow-y: scroll;
 }
 
 .input {
-  height: 11%;
+  height: 10%;
   border-radius: 2vw;
   border: 0.1vw solid black;
   margin: 1vw;
@@ -16,10 +16,11 @@
 .input > input {
   border: none;
   outline: none;
-  margin-top: 0.12vw;
+  margin-top: 0.5vw;
   margin-left: 1vw;
   font-size: 1vw;
   font-weight: 100;
+  width: 90%;
 }
 
 p {
@@ -33,7 +34,7 @@ p {
 .task {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 20vw;
 }
 
 .taskTitle {
@@ -45,20 +46,22 @@ p {
 
 .taskTitle > input {
   font-size: 1vw;
-  margin-top: 0.3vw;
+  margin-top: 0.4vw;
 }
 
 .taskList {
   height: 80%;
+  width: 20vw;
   margin-top: 1vw;
   overflow-y: scroll;
 }
 
 .deleteTask {
-  flex: 10%;
+  flex: 2%;
   cursor: pointer;
   font-size: 1.2vw;
   align-self: center;
+  margin: 0vw;
 }
 
 .editTask {

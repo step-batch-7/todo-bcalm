@@ -71,21 +71,17 @@ const toggleStatus = function(taskId) {
   sendHttpRequest(req, () => {});
 };
 
-const editTodo = function(todo, todoId) {
-  todo.firstChild.style.display = 'block';
-  todo.lastChild.remove();
-  const value = todo.previousSibling.firstChild.innerText;
-  todo.previousSibling.firstChild.contentEditable = 'false';
+const editTodo = function(todoId) {
+  const value = event.target.innerText;
+  event.target.contentEditable = false;
   const data = {title: value, id: todoId};
   const req = {method: 'POST', url: '/editTodo', body: data};
   sendHttpRequest(req, () => {});
 };
 
-const editTask = function(task, taskId) {
-  task.firstChild.style.display = 'block';
-  task.lastChild.remove();
-  const value = task.previousSibling.lastChild.innerText;
-  task.previousSibling.lastChild.contentEditable = 'false';
+const editTask = function(taskId) {
+  event.target.contentEditable = false;
+  const value = event.target.innerText;
   const data = {title: value, id: taskId};
   const req = {method: 'POST', url: '/editTask', body: data};
   sendHttpRequest(req, () => {});

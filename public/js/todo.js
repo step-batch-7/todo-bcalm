@@ -1,12 +1,6 @@
 const editTodoTitle = function(todoId) {
-  const todo = event.target.parentElement;
-  todo.previousSibling.firstChild.contentEditable = 'true';
-  const send = document.createElement('img');
-  send.src = '/images/send.svg';
-  send.className = editTodo;
-  send.onclick = () => editTodo(todo, todoId);
-  todo.appendChild(send);
-  todo.firstChild.style.display = 'none';
+  event.target.contentEditable = true;
+  event.target.onblur = () => editTodo(todoId);
 };
 
 const createEditButton = function(className, callback, id) {
@@ -25,21 +19,15 @@ const createDeleteButton = function(className, callback, id) {
   return deleteButton;
 };
 
-const createTodoName = function(task) {
+const createHeader = function(task, todoId) {
   const todoName = document.createElement('div');
   todoName.innerHTML = `<span >${task}</span`;
   todoName.className = 'todoName';
-  return todoName;
-};
-
-const createHeader = function(task, todoId) {
-  const todoName = createTodoName(task);
-  const editButton = createEditButton('editTodo', editTodoTitle, todoId);
+  todoName.onclick = () => editTodoTitle(todoId);
   const deleteButton = createDeleteButton('delete', deleteTodo, todoId);
   const todoHeader = document.createElement('div');
   todoHeader.className = 'todoHeader';
   todoHeader.appendChild(todoName);
-  todoHeader.appendChild(editButton);
   todoHeader.appendChild(deleteButton);
   return todoHeader;
 };
@@ -50,7 +38,7 @@ const createFooter = function(id) {
   const input = document.createElement('div');
   input.className = 'input';
   input.innerHTML = `<input name="taskName" id=${id} onkeyup=addTask(${id})
-  placeholder="Let's create a task" class="taskTitle" required>`;
+  placeholder="Let's create a task..." required>`;
   task.appendChild(input);
   return task;
 };
