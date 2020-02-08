@@ -24,8 +24,8 @@
 }
 
 p {
-  font-size: 1.2vw;
-  font-weight: 100;
+  /* font-size: 1.2vw;
+  font-weight: 100; */
   margin: 0vw;
   margin-top: 0.2vw;
   outline: none;
@@ -60,6 +60,8 @@ p {
   width: 20vw;
   margin-top: 1vw;
   overflow-y: scroll;
+  font-size: 1.2vw;
+  font-weight: 100;
 }
 
 .deleteTask {

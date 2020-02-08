@@ -104,6 +104,10 @@ body {
   padding: 0.5vw;
 }
 
+::-webkit-input-placeholder {
+  font-style: italic;
+}
+
 #todoSearchBar > input,
 #taskSearchBar > input {
   outline: none;

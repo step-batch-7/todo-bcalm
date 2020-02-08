@@ -29,9 +29,9 @@ const searchByTodo = function() {
 const matchTask = function(text, task, todo) {
   const taskId = task.parentElement.parentElement.id;
   if (task.innerText.includes(text) && text) {
-    getElement(taskId).style['background-color'] = '#2b0f1621';
+    getElement(taskId).style['font-weight'] = '600';
   } else {
-    getElement(taskId).style['background-color'] = 'white';
+    getElement(taskId).style['font-weight'] = '100';
   }
 };
 
