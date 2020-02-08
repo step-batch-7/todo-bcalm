@@ -33,8 +33,14 @@ p {
 
 .task {
   display: flex;
-  /* justify-content: space-between; */
   width: 100%;
+}
+.task:hover > .deleteTask {
+  cursor: pointer;
+  font-size: 1.2vw;
+  align-self: center;
+  margin: 0vw;
+  display: block;
 }
 
 .taskTitle {
@@ -61,4 +67,5 @@ p {
   font-size: 1.2vw;
   align-self: center;
   margin: 0vw;
+  display: none;
 }

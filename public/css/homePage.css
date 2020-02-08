@@ -10,7 +10,6 @@ body {
   padding: 0;
   height: 100%;
   width: 100%;
-  border: 0.1vw solid black;
 }
 
 #header {
@@ -33,12 +32,16 @@ body {
 }
 
 #newList {
-  margin-top: -2.6vw;
+  margin-top: -2.1vw;
   width: 2.1vw;
   height: 2vw;
   border-radius: 0.5vw;
   position: fixed;
-  right: 1%;
+  right: 2%;
+}
+
+#newList:hover {
+  transform: scale(1.5);
 }
 
 #crossButton {
@@ -93,7 +96,7 @@ body {
 
 #todoSearchBar {
   margin-top: 1vw;
-  left: 70%;
+  left: 73%;
   flex: 10%;
   width: 25vw;
   border-bottom: 0.1vw solid black;
