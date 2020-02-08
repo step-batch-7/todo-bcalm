@@ -91,7 +91,7 @@ body {
   font-size: 1.3vw;
 }
 
-#searchBar {
+#todoSearchBar {
   margin-top: 1vw;
   left: 70%;
   flex: 10%;
@@ -101,7 +101,8 @@ body {
   padding: 0.5vw;
 }
 
-#searchBar > input {
+#todoSearchBar > input,
+#taskSearchBar > input {
   outline: none;
   border: none;
   width: 90%;
@@ -109,30 +110,18 @@ body {
   font-weight: 250;
 }
 
-#searchBar > img {
+#todoSearchBar > img,
+#taskSearchBar > img {
   width: 6%;
   vertical-align: sub;
 }
 
-/* .searchBar {
-  margin-top: 30px;
-  border-radius: 10px;
-  border: solid rgba(104, 98, 98, 0.397);
-  height: 30px;
-  font-size: 20px;
+#taskSearchBar {
+  margin-top: -3vw;
+  left: 2%;
+  flex: 10%;
+  width: 25vw;
+  border-bottom: 0.1vw solid black;
+  position: relative;
+  padding: 0.5vw;
 }
-#searchBox {
-  width: 200px;
-  height: 30px;
-  font-size: 15px;
-  border-radius: 10px;
-}
-#searchBox:focus {
-  outline: none;
-}
-#searchSuggestion {
-  font: lighter;
-  width: 200px;
-  font-size: 1vw;
-  line-height: 2vw;
-} */

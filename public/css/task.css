@@ -62,14 +62,3 @@ p {
   align-self: center;
   margin: 0vw;
 }
-
-.editTask {
-  align-self: center;
-  flex: 10%;
-  margin-right: 1vw;
-  cursor: pointer;
-}
-.editTask > img {
-  width: 2vw;
-  height: 1.2vw;
-}
