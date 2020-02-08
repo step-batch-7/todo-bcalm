@@ -33,14 +33,14 @@ const matchTask = function(text, task, todo) {
   } else {
     getElement(taskId).style['background-color'] = 'white';
   }
-  getElement(todo.id).style.display = '';
 };
 
 const showMatchedTask = function(todo, text) {
   const taskTitle = Array.from(select(`[id="${todo.id}"] p`));
   const matchedTask = taskTitle.filter(task => task.innerText.includes(text));
   taskTitle.forEach(task => matchTask(text, task, todo));
-  if (matchedTask.length === 0) {
+  getElement(todo.id).style.display = '';
+  if (matchedTask.length === 0 && text) {
     getElement(todo.id).style.display = 'none';
   }
 };
