@@ -1,0 +1,58 @@
+
+<!-- saved from url=(0022)http://localhost:8080/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="./TODO_files/main.js"></script>
+    <script src="./TODO_files/task.js"></script>
+    <script src="./TODO_files/todo.js"></script>
+    <script src="./TODO_files/request.js"></script>
+    <link rel="stylesheet" href="./TODO_files/font-awesome.min.css">
+
+    <link rel="stylesheet" href="./TODO_files/homePage.css">
+    <link rel="stylesheet" href="./TODO_files/todo.css">
+    <link rel="stylesheet" href="./TODO_files/task.css">
+    <title>TODO</title>
+  </head>
+  <body onload="addExistedTodo()">
+    <div id="homePage">
+      <div id="header">
+        <div id="headerText">
+          <span> TODO </span>
+        </div>
+        <div id="newList" onclick="showAddListOption(this)">
+           <i class="fa fa-plus-circle" aria-hidden="true"></i>
+        </div>
+      </div>
+
+      <div id="addList" class="addList">
+         <span>
+          List Name
+         </span>
+         <div id="listName">
+           <input name="listName" id="todoName" placeholder="Let&#39;s give it a name">
+           <span class="cancel" onclick="cancelList(this)">cancel</span>
+           <span class="save" onclick="addTodo(this)">save</span>
+         </div>
+      </div>
+
+      <div id="container"><div class="todo" id="2"><div class="todoHeader"><div class="todoName"><span>Home</span></div><div class="delete"><i class="fa fa-trash-o" onclick="(function(taskId) {
+  const req = {
+    method: &#39;DELETE&#39;,
+    url: &#39;/deleteTodo&#39;,
+    body: taskId
+  };
+  sendHttpRequest(req, function() {
+    deleteTodoItem(req.body);
+  });
+})(&#39;2&#39;)" aria-hidden="true"></i></div></div><div class="taskName"><div class="input"><input name="taskName" id="2" onkeyup="addTask(2)" placeholder="Let&#39;s create a task..." required=""></div><div class="taskList"><div id="2_1" class="task"><div class="taskTitle"><input name="taskName" onclick="toggleStatus(&#39;2_1&#39;)" unchecked="" type="checkBox"><p>asdfasdf</p></div><div class="deleteTask"><i class="fa fa-trash-o" onclick="(function(taskId) {
+  const req = {method: &#39;DELETE&#39;, url: &#39;/deleteTask&#39;, body: taskId};
+  sendHttpRequest(req, function() {
+    deleteTaskName(taskId);
+  });
+})(&#39;2_1&#39;)" aria-hidden="true"></i></div></div></div></div></div></div>
+    </div>
+  
+
+
+
+</body></html>

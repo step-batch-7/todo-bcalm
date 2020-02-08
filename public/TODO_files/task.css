@@ -33,8 +33,8 @@ p {
 
 .task {
   display: flex;
-  /* justify-content: space-between; */
-  width: 100%;
+  justify-content: space-between;
+  width: 20vw;
 }
 
 .taskTitle {
@@ -46,7 +46,7 @@ p {
 
 .taskTitle > input {
   font-size: 1vw;
-  margin-top: 0.5vw;
+  margin-top: 0.4vw;
 }
 
 .taskList {
@@ -57,10 +57,11 @@ p {
 }
 
 .deleteTask {
+  flex: 2%;
   cursor: pointer;
   font-size: 1.2vw;
   align-self: center;
-  margin: 0vw;
+  margin: 0vwp;
 }
 
 .editTask {
