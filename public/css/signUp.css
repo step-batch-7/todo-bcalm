@@ -1,4 +1,4 @@
-.logInPage {
+.signUpPage {
   font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
   width: 100vw;
   height: 100vh;
@@ -6,7 +6,7 @@
   background-size: cover;
 }
 
-.login {
+.signUp {
   position: absolute;
   background-color: white;
   margin: auto;
@@ -15,9 +15,9 @@
   bottom: 0;
   left: 0;
   width: 25vw;
-  height: 30vw;
+  height: 33vw;
   border: 0.1vw solid;
-  font-size: 1.5vw;
+  font-size: 1.2vw;
   font-weight: 100;
 }
 
@@ -25,56 +25,33 @@
   margin: 1vw;
 }
 
-.userName {
+.userDetail {
   margin: 1vw;
 }
 
-.userName * p {
+.userDetail * p {
   margin-left: 0.5vw;
   margin-top: 1.5vw;
   margin-bottom: 0;
+  font-weight: 100;
 }
 
-.userName * input {
-  height: 100%;
+.userDetail * input {
   width: 90%;
   margin: 0.5vw;
+  font-size: 1.5vw;
   outline: none;
-  font-size: 2vw;
-  font-weight: 100;
 }
 
-.userName * button {
+.userDetail * button {
   width: 90%;
-  height: 100%;
   margin-left: 0.7vw;
-  margin-top: 1.5vw;
-  margin-bottom: 0.7vw;
+  margin-top: 1.8vw;
+  margin-bottom: 0.3vw;
   cursor: pointer;
-  height: 3vw;
-  font-size: 1.5vw;
-  font-weight: 100;
+  height: 2vw;
+  font-size: 1.2vw;
   border-radius: 0.5vw;
   background-color: mediumblue;
   color: white;
-}
-
-.userName > a {
-  text-decoration: none;
-  margin-left: 9vw;
-}
-
-.signUp {
-  margin-top: 2vw;
-}
-
-.signUp > a {
-  cursor: pointer;
-  border: none;
-  outline: none;
-  width: 100%;
-  margin-top: 1.5vw;
-  text-decoration: none;
-  color: black;
-  margin-left: 7vw;
 }
