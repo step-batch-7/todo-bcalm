@@ -3,7 +3,7 @@ body {
 }
 
 #homePage {
-  font-family: sans-serif;
+  font-family: 'Trebuchet MS', Arial, Helvetica, sans-serif;
   top: 0;
   left: 0;
   margin: 0;
@@ -55,8 +55,11 @@ body {
 
 .addList {
   position: absolute;
-  margin-top: 10vw;
-  margin-left: 40vw;
+  margin: auto;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   height: 7vw;
   width: 16vw;
   border: 1px solid black;
