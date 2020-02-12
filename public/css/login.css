@@ -46,17 +46,15 @@
 
 .userName * button {
   width: 90%;
-  height: 100%;
   margin-left: 0.7vw;
   margin-top: 1.5vw;
   margin-bottom: 0.7vw;
   cursor: pointer;
   height: 3vw;
   font-size: 1.5vw;
-  font-weight: 100;
   border-radius: 0.5vw;
-  background-color: mediumblue;
-  color: white;
+  background-color: #4cce4c;
+  color: black;
 }
 
 .userName > a {

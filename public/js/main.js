@@ -50,3 +50,17 @@ const searchByTask = function() {
   const allTodo = select('.todo');
   allTodo.forEach(todo => showMatchedTask(todo, text));
 };
+
+const matchPassword = function() {
+  const reTypePassword = event.target.value;
+  const password = document.querySelector('#password').value;
+  const confirmPassword = document.querySelector('#confirmPassword');
+  const submitButton = document.querySelector('#submit');
+  if (!password.startsWith(reTypePassword)) {
+    confirmPassword.style['background-color'] = 'red';
+    submitButton.disabled = true;
+  } else {
+    confirmPassword.style['background-color'] = 'white';
+    submitButton.disabled = false;
+  }
+};
